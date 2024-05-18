@@ -5,10 +5,9 @@ const port = 8080;
 const routes = require("./routes");
 var cors = require("cors");
 app.use(cors());
-console.log("URI: ", process.env.MONGODB_URI);
 const mongoose = require("mongoose");
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGODB_URI) // here please replace this varable adding a mongoDb atlas deployed URL
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(port, () => {
